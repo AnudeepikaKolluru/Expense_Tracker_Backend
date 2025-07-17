@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const PDFDocument = require('pdfkit');
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -14,13 +14,14 @@ app.use((req, res, next) => {
   console.log(`Request made to: ${req.url}`);
   next();
 });
+require("dotenv").config();
 
-const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'expenses_final',
-  password: 'cse',
-  port: 5432,
+const pool= new Pool({
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT,
 });
 
 
