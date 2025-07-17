@@ -25,5 +25,5 @@ def index():
     return ' ML Categorization API is running (Random Forest)'
 
 if __name__ == "_main_":
-    print(" ML Categorization API running on http://localhost:8001")
+    print(" ML Categorization API running ")
     app.run(port=8001)

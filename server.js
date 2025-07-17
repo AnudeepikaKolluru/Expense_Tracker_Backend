@@ -28,7 +28,7 @@ const pool= new Pool({
 
 async function categorizeExpense(description) {
   try {
-    const response = await axios.post('http://localhost:8001/categorize', { description });
+    const response = await axios.post('https://apiservice-qzuu.onrender.com/categorize', { description });
     return response.data.category || 'Other';
   } catch (err) {
     console.error('Error calling ML categorizer:', err);
