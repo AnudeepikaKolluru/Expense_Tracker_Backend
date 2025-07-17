@@ -1,28 +1,23 @@
-const axios = require('axios');
+require("dotenv").config(); // FIRST LINE
+
 const express = require('express');
 const cors = require('cors');
-const { Pool } = require('pg');
+const axios = require('axios');
 const bodyParser = require('body-parser');
 const PDFDocument = require('pdfkit');
+const { Pool } = require('pg'); // ONLY ONCE
 
 const app = express();
-const port = process.env.PORT
+const port = process.env.PORT || 5000;
 
-app.use(cors());
-app.use(bodyParser.json());
-app.use((req, res, next) => {
-  console.log(`Request made to: ${req.url}`);
-  next();
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
-require("dotenv").config();
 
-const pool= new Pool({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
-  port: process.env.DB_PORT,
-});
+
 
 
 
