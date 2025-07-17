@@ -3,9 +3,9 @@ import joblib
 
 app = Flask(__name__)
 
+
 model = joblib.load("expense_categorizer_rf.pkl")
 
-@app.route("/api/categorize", methods=["POST"])
 @app.route("/api/categorize", methods=["POST"])
 def categorize():
     data = request.json
@@ -13,17 +13,17 @@ def categorize():
     if not description:
         return jsonify({"error": "Description required"}), 400
 
-    print(f" Received description: {description}")
+    print(f"Received description: {description}")
     prediction = model.predict([description])[0]
-    print(f" Categorized as: {prediction}")
+    print(f"Categorized as: {prediction}")
 
     return jsonify({"category": prediction})
 
-
 @app.route('/')
 def index():
-    return ' ML Categorization API is running (Random Forest)'
+    return 'ML Categorization API is running (Random Forest)'
 
-if __name__ == "_main_":
-    print(" ML Categorization API running ")
+
+if __name__ == "__main__":
+    print("ML Categorization API running")
     app.run(port=8001)
