@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: expense-tracker-node
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    rootDir: .
+    autoDeploy: true
+
+  - type: web
+    name: ocr-server
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python ocr_server.py
+    rootDir: .
+    autoDeploy: true
+
+  - type: web
+    name: ml-api-server
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python api.py
+    rootDir: .
+    autoDeploy: true
