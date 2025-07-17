@@ -26,4 +26,4 @@ def index():
 
 if __name__ == "__main__":
     print("ML Categorization API running")
-    app.run(port=8001)
+    app.run(host="0.0.0.0", port=8001)
