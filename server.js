@@ -20,6 +20,8 @@ const pool = new Pool({
   }
 });
 
+app.use(cors());
+app.use(bodyParser.json()); 
 
 
 async function categorizeExpense(description) {
@@ -31,6 +33,42 @@ async function categorizeExpense(description) {
     return 'Other';
   }
 }
+
+app.post('/api/login', async (req, res) => {
+  const { group_name, key } = req.body;
+  console.log("Received login req with:", group_name, key); 
+
+  try {
+    const groupRes = await pool.query('SELECT id, key FROM groups WHERE group_name = $1', [group_name]);
+    console.log("Group result:", groupRes.rows); 
+
+    if (groupRes.rows.length === 0) {
+      return res.status(400).json({ error: 'Group not found' });
+    }
+
+    const group = groupRes.rows[0];
+    if (group.key !== key) {
+      return res.status(400).json({ error: 'Invalid key' });
+    }
+
+    const participantRes = await pool.query('SELECT * FROM participant WHERE group_id = $1', [group.id]);
+    console.log("Participants:", participantRes.rows); 
+
+    const participant = participantRes.rows.length > 0 ? participantRes.rows : [];
+
+    res.json({
+      success: true,
+      group_id: group.id,
+      group_name: group_name,
+      participant: participant,
+    });
+
+  } catch (err) {
+    console.error('Error during login:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 
 
 app.get('/api/groups/:groupId/expenses/pdf', async (req, res) => {
@@ -215,30 +253,7 @@ app.get('/api/groups/:groupId/participant', async (req, res) => {
   }
 });
 
-app.post('/api/login', async (req, res) => {
-  const { group_name, key } = req.body;
-  try {
-    const groupRes = await pool.query('SELECT id, key FROM groups WHERE group_name = $1', [group_name]);
-    if (groupRes.rows.length === 0) {
-      return res.status(400).json({ error: 'Group not found' });
-    }
-    const group = groupRes.rows[0];
-    if (group.key !== key) {
-      return res.status(400).json({ error: 'Invalid key' });
-    }
-    const participantRes = await pool.query('SELECT * FROM participant WHERE group_id = $1', [group.id]);
-    const participant = participantRes.rows.length > 0 ? participantRes.rows : [];
-    res.json({
-      success: true,
-      group_id: group.id,
-      group_name: group_name,
-      participant: participant,
-    });
-  } catch (err) {
-    console.error('Error during login:', err);
-    res.status(500).json({ error: 'Internal server error' });
-  }
-});
+
 
 app.post('/api/payments', async (req, res) => {
   const { expense_id, payer_id, payee_id, amount, group_id } = req.body;
