@@ -15,16 +15,12 @@ services:
     plan: free
     region: oregon
     dockerfilePath: ./Dockerfile
-    envVars:
-      - key: PORT
-        value: 8000
+   
 
 
   - type: web
     name: apiserver
     env: docker
     dockerfilePath: ./Dockerfile.api
-    envVars:
-      - key: PORT
-        value: 8001
+    
 
