@@ -1,6 +1,6 @@
 FROM python:3.10-slim
 
-# Install system dependencies
+# System dependencies (no cython here)
 RUN apt-get update && apt-get install -y \
     tesseract-ocr \
     libglib2.0-0 \
@@ -17,12 +17,6 @@ WORKDIR /app
 # Copy code
 COPY . .
 
-# Install Python dependencies (including Cython here)
-RUN pip install --no-cache-dir cython \
-    && pip install --no-cache-dir -r requirements.txt
-
-# Expose port
-EXPOSE 8001
-
-# Start the Flask app
-CMD ["python", "api.py"]
+# Install dependencies
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt

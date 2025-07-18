@@ -1,31 +1,28 @@
+# Use stable Python 3.10 base image
 FROM python:3.10-slim
 
-# Prevents prompts during package installs
-ENV DEBIAN_FRONTEND=noninteractive
-
-# Install system dependencies, Tesseract, and build tools for scikit-learn
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
     tesseract-ocr \
     libglib2.0-0 \
     libsm6 \
     libxext6 \
     libxrender-dev \
-    build-essential \
-    python3-dev \
-    cython \
+    gcc \
     && rm -rf /var/lib/apt/lists/*
 
-# Set work directory
+# Set working directory
 WORKDIR /app
 
-# Copy code
+# Copy all files to container
 COPY . .
 
-# Install Python dependencies
+# Upgrade pip and install Python dependencies
+RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Expose port
 EXPOSE 8000
 
-# Start the Flask app
+# Run the Flask app
 CMD ["python", "ocr_server.py"]
