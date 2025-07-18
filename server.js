@@ -19,7 +19,7 @@ const pool = new Pool({
     rejectUnauthorized: false
   }
 });
-
+module.exports = pool;
 app.use(cors());
 app.use(bodyParser.json()); 
 
