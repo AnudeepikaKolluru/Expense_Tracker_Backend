@@ -3,8 +3,10 @@ flask_cors
 pytesseract
 opencv-python
 Pillow
-numpy
-joblib
+flask
+numpy==1.24.3
 scikit-learn==1.2.2
+joblib==1.2.0
+
 requests
 cython
