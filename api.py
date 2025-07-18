@@ -21,7 +21,7 @@ def categorize():
 
 @app.route('/')
 def index():
-    return 'ML Categorization API is running (Random Forest)'
+    return 'ML Categorization API is running '
 
 
 if __name__ == "__main__":

@@ -21,10 +21,10 @@ services:
 
 
   - type: web
-    name: ml-api-server
-    env: python
-    plan: free
-    buildCommand: pip install -r requirements.txt
-    startCommand: python api.py
-    rootDir: .
-    autoDeploy: true
+    name: apiserver
+    env: docker
+    dockerfilePath: ./Dockerfile.api
+    envVars:
+      - key: PORT
+        value: 8001
+
