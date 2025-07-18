@@ -18,12 +18,6 @@ const pool = new Pool({
 });
 
 
-app.all('*', (req, res, next) => {
-  console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
-  next();
-});
-
-
 
 async function categorizeExpense(description) {
   try {
