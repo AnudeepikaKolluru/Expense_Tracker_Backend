@@ -29,7 +29,7 @@ app.use(bodyParser.json());
 
 async function categorizeExpense(description) {
   try {
-    const response = await axios.post('https://apiservice-qzuu.onrender.com/api/categorize', { description });
+    const response = await axios.post('https://apiservice-f6oq.onrender.com/api/categorize', { description });
     return response.data.category || 'Other';
   } catch (err) {
     console.error('Error calling ML categorizer:', err);

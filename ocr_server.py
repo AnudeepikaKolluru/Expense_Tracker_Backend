@@ -63,7 +63,7 @@ def ocr_upload():
     # === Categorization via ML API ===
     try:
         response = requests.post(
-            "https://apiservice-qzuu.onrender.com/api/categorize",
+            "https://apiservice-f6oq.onrender.com/api/categorize",
             json={"description": desc_text}
         )
         if response.status_code == 200:
