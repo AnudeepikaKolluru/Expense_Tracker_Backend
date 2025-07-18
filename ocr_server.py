@@ -10,7 +10,9 @@ CORS(app)
 
 
 
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+# Use default system path (in Docker)
+pytesseract.pytesseract.tesseract_cmd = 'tesseract'
+
 
 @app.route('/api/ocr-upload', methods=['POST'])
 def ocr_upload():
