@@ -22,5 +22,8 @@ services:
     name: apiserver
     env: docker
     dockerfilePath: ./Dockerfile.api
-    
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: 10000
 
