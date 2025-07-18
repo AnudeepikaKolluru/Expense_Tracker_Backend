@@ -7,6 +7,9 @@ const bodyParser = require('body-parser');
 const PDFDocument = require('pdfkit');
 const { Pool } = require('pg'); // ONLY ONCE
 
+
+console.log("Starting backend...");
+
 const app = express();
 const port = process.env.PORT || 10000;
 
@@ -966,17 +969,12 @@ if (intent === 'Get Monthly Expenses') {
 
 
 
-
-
-
-
-
-
-
-
-
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+app.listen(port, (err) => {
+  if (err) {
+    console.error('Failed to start server:', err);
+  } else {
+    console.log(`Server running at http://localhost:${port}`);
+  }
 });
 
 app.get('/', (req, res) => res.send('Backend working!'));
