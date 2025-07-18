@@ -4,15 +4,13 @@ from PIL import Image
 import pytesseract
 import os
 import re
+import requests  # To call ML API
 
 app = Flask(__name__)
 CORS(app)
 
-
-
-# Use default system path (in Docker)
+# Use system tesseract (default inside Docker/Render)
 pytesseract.pytesseract.tesseract_cmd = 'tesseract'
-
 
 @app.route('/api/ocr-upload', methods=['POST'])
 def ocr_upload():
@@ -31,42 +29,54 @@ def ocr_upload():
     amount = None
     description = None
 
-    # Case insensitive check for "total" or "total amount"
+    # Case insensitive check for "total"
     for line in lines:
         if re.search(r'\b(total|total amount|total payable)\b', line, re.IGNORECASE):
-            # Look for amounts after the "total" line
             for part in line.split():
                 if '₹' in part or 'RS' in part or '$' in part:
-                    # Extract numeric part including decimal
-                    match = re.search(r'[\d,]+(?:\.\d{1,2})?', part)  # Allows optional decimal with 1 or 2 digits
+                    match = re.search(r'[\d,]+(?:\.\d{1,2})?', part)
                     if match:
                         amount = match.group(0)
                         break
-        
-        # Try to extract a description (for example, Security or Maintenance)
         elif re.search(r'\b(security|maintenance)\b', line, re.IGNORECASE):
             description = line.strip()
 
     if not amount:
-        # fallback: look for ₹, RS, or $ followed by a number
         for line in lines:
             if '₹' in line or 'RS' in line or '$' in line:
-                # Handling '₹', 'RS', and '$' cases with possible spaces
                 if '₹' in line:
                     parts = line.split('₹')
                 elif 'RS' in line:
                     parts = line.split('RS')
                 elif '$' in line:
                     parts = line.split('$')
-                
-                match = re.search(r'[\d,]+(?:\.\d{1,2})?', parts[1].strip())  # Allows optional decimal
-                if match:
-                    amount = match.group(0)
-                    break
+                if len(parts) > 1:
+                    match = re.search(r'[\d,]+(?:\.\d{1,2})?', parts[1].strip())
+                    if match:
+                        amount = match.group(0)
+                        break
+
+    # Fallback description
+    desc_text = description or 'Bill Payment'
+
+    # === ML Categorization API Call ===
+    try:
+        ml_response = requests.post(
+            "https://apiservice-qzuu.onrender.com/api/categorize",  
+            json={"description": desc_text}
+        )
+        if ml_response.status_code == 200:
+            category = ml_response.json().get("category", "Uncategorized")
+        else:
+            category = "Uncategorized"
+    except Exception as e:
+        print("Error calling ML categorization API:", e)
+        category = "Uncategorized"
 
     return jsonify({
         'amount': amount or '',
-        'description': description or 'Bill Payment'
+        'description': desc_text,
+        'category': category
     })
 
 @app.route('/')
@@ -74,5 +84,5 @@ def index():
     return 'OCR server is up and running!'
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 8000))  
-    app.run(host='0.0.0.0', port=port, debug=True)  
+    port = int(os.environ.get("PORT", 8000))
+    app.run(host='0.0.0.0', port=port, debug=True)
