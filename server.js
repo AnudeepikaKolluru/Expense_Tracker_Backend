@@ -9,6 +9,7 @@ const { Pool } = require('pg'); // ONLY ONCE
 
 
 console.log("Starting backend...");
+console.log("Using DATABASE_URL:", process.env.DATABASE_URL);
 
 const app = express();
 const port = process.env.PORT || 10000;
