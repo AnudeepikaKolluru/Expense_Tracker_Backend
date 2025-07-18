@@ -8,7 +8,7 @@ const PDFDocument = require('pdfkit');
 const { Pool } = require('pg'); // ONLY ONCE
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 10000;
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
