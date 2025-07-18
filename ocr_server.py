@@ -4,12 +4,12 @@ from PIL import Image
 import pytesseract
 import os
 import re
-import requests  # To call ML API
+import requests
 
 app = Flask(__name__)
 CORS(app)
 
-# Use system tesseract (default inside Docker/Render)
+# Default system Tesseract in Docker or Render
 pytesseract.pytesseract.tesseract_cmd = 'tesseract'
 
 @app.route('/api/ocr-upload', methods=['POST'])
@@ -24,12 +24,12 @@ def ocr_upload():
     text = pytesseract.image_to_string(image)
     print("OCR Output:\n", text)
 
-    # Try to extract amount and description
+    # Extract lines and initialize
     lines = text.split('\n')
     amount = None
     description = None
 
-    # Case insensitive check for "total"
+    # Look for total line
     for line in lines:
         if re.search(r'\b(total|total amount|total payable)\b', line, re.IGNORECASE):
             for part in line.split():
@@ -41,6 +41,7 @@ def ocr_upload():
         elif re.search(r'\b(security|maintenance)\b', line, re.IGNORECASE):
             description = line.strip()
 
+    # Fallback amount detection
     if not amount:
         for line in lines:
             if '₹' in line or 'RS' in line or '$' in line:
@@ -56,21 +57,21 @@ def ocr_upload():
                         amount = match.group(0)
                         break
 
-    # Fallback description
+    # Default description if none found
     desc_text = description or 'Bill Payment'
 
-    # === ML Categorization API Call ===
+    # === Categorization via ML API ===
     try:
-        ml_response = requests.post(
-            "https://apiservice-qzuu.onrender.com/api/categorize",  
+        response = requests.post(
+            "https://apiservice-qzuu.onrender.com/api/categorize",
             json={"description": desc_text}
         )
-        if ml_response.status_code == 200:
-            category = ml_response.json().get("category", "Uncategorized")
+        if response.status_code == 200:
+            category = response.json().get("category", "Uncategorized")
         else:
             category = "Uncategorized"
     except Exception as e:
-        print("Error calling ML categorization API:", e)
+        print("ML API error:", e)
         category = "Uncategorized"
 
     return jsonify({

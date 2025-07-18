@@ -1,0 +1,391 @@
+description,category
+Trip to Goa #86,Travel
+Flight to Mumbai,Travel
+Uber ride #78,Travel
+Travel expense,Travel
+Flight to Mumbai,Travel
+Flight to Mumbai #39,Travel
+Train ticket,Travel
+Travel expense,Travel
+Flight to Mumbai #40,Travel
+Toll gate,Travel
+Airport cab #46,Travel
+Trip to Goa,Travel
+Airport cab,Travel
+Airport cab,Travel
+Petrol refill,Travel
+Uber ride,Travel
+Travel expense #50,Travel
+Toll gate,Travel
+Airport cab #100,Travel
+Travel expense #56,Travel
+Bus pass #55,Travel
+Flight to Mumbai #94,Travel
+Trip to Goa #45,Travel
+Flight to Mumbai #57,Travel
+Uber ride,Travel
+Flight cancellation fee,Travel
+Bus pass,Travel
+Flight cancellation fee #78,Travel
+Trip to Goa #39,Travel
+Uber ride #97,Travel
+Coffee shop,Food
+Restaurant bill,Food
+Swiggy delivery,Food
+Fast food outlet #63,Food
+Snacks from store,Food
+Dinner at McDonald's #73,Food
+Breakfast sandwich #80,Food
+Juice bar #81,Food
+Breakfast sandwich,Food
+Swiggy delivery #6,Food
+Swiggy delivery,Food
+Snacks from store #53,Food
+Juice bar #13,Food
+Breakfast sandwich #96,Food
+Restaurant bill #48,Food
+Dinner at McDonald's,Food
+Restaurant bill #19,Food
+Breakfast sandwich,Food
+Snacks from store #17,Food
+Breakfast sandwich,Food
+Snacks from store,Food
+Restaurant bill,Food
+Snacks from store,Food
+Coffee shop,Food
+Breakfast sandwich,Food
+Dinner at McDonald's #59,Food
+Swiggy delivery,Food
+Juice bar,Food
+Lunch from Zomato,Food
+Dinner at McDonald's,Food
+Supermarket bill,Groceries
+Supermarket bill,Groceries
+Grocery shopping,Groceries
+Bread and eggs,Groceries
+Supermarket bill #49,Groceries
+Bought milk #95,Groceries
+Grocery shopping #46,Groceries
+Walmart purchase,Groceries
+Local grocery shop #99,Groceries
+Weekly grocery run #93,Groceries
+Bread and eggs #95,Groceries
+Monthly ration #13,Groceries
+Grocery shopping,Groceries
+Supermarket bill #65,Groceries
+Walmart purchase,Groceries
+Walmart purchase #10,Groceries
+Grocery shopping,Groceries
+Vegetables from market #5,Groceries
+Bread and eggs #88,Groceries
+Bought milk,Groceries
+Monthly ration,Groceries
+Weekly grocery run #70,Groceries
+Bread and eggs #47,Groceries
+Grocery shopping #42,Groceries
+Weekly grocery run #74,Groceries
+Monthly ration,Groceries
+Supermarket bill #76,Groceries
+Bought milk,Groceries
+Bought milk #52,Groceries
+Grocery essentials,Groceries
+Netflix subscription,Entertainment
+Live show #27,Entertainment
+Concert tickets #92,Entertainment
+Movie night,Entertainment
+Video game purchase #20,Entertainment
+Karaoke night #26,Entertainment
+Netflix subscription #65,Entertainment
+Live show #28,Entertainment
+Concert tickets #53,Entertainment
+Spotify Premium #68,Entertainment
+Karaoke night #7,Entertainment
+Online movie rental,Entertainment
+Movie night #8,Entertainment
+Karaoke night #44,Entertainment
+Online movie rental #90,Entertainment
+Live show,Entertainment
+Amusement park #96,Entertainment
+Spotify Premium #63,Entertainment
+Netflix subscription #75,Entertainment
+Karaoke night #89,Entertainment
+Amusement park,Entertainment
+Live show,Entertainment
+Amusement park #10,Entertainment
+Movie night,Entertainment
+Spotify Premium,Entertainment
+Concert tickets #98,Entertainment
+Spotify Premium,Entertainment
+Spotify Premium #86,Entertainment
+Video game purchase,Entertainment
+Concert tickets #93,Entertainment
+Utility charges #12,Utilities
+DTH recharge #87,Utilities
+Electricity bill #70,Utilities
+Mobile bill,Utilities
+Mobile bill #96,Utilities
+Internet recharge #59,Utilities
+Mobile bill #67,Utilities
+Power backup fees,Utilities
+Postpaid payment,Utilities
+Gas connection,Utilities
+Power backup fees #19,Utilities
+Internet recharge,Utilities
+Utility charges #40,Utilities
+Municipal tax,Utilities
+Utility charges #91,Utilities
+Municipal tax #12,Utilities
+Municipal tax,Utilities
+Gas connection #24,Utilities
+Municipal tax,Utilities
+Water bill #84,Utilities
+Postpaid payment #53,Utilities
+DTH recharge #97,Utilities
+Power backup fees #30,Utilities
+Power backup fees,Utilities
+DTH recharge #2,Utilities
+Gas connection #21,Utilities
+Utility charges,Utilities
+Mobile bill,Utilities
+Municipal tax #43,Utilities
+DTH recharge,Utilities
+Gift wrap service #50,Shopping
+Bought jeans,Shopping
+Bought jeans,Shopping
+Bought jeans #7,Shopping
+Discounted deal #74,Shopping
+Online shopping #44,Shopping
+T-shirt from H&M #65,Shopping
+Fashion sale #20,Shopping
+Discounted deal #34,Shopping
+Fashion sale #72,Shopping
+Online shopping,Shopping
+Online shopping #46,Shopping
+T-shirt from H&M,Shopping
+Bought jeans,Shopping
+Discounted deal,Shopping
+Shoes from Nike #11,Shopping
+Discounted deal #93,Shopping
+New handbag #87,Shopping
+Amazon order #94,Shopping
+Bought jeans #86,Shopping
+Clothes from Myntra #2,Shopping
+Gift wrap service,Shopping
+Amazon order #7,Shopping
+Fashion sale #92,Shopping
+Bought jeans #99,Shopping
+Fashion sale,Shopping
+Shoes from Nike #58,Shopping
+Online shopping #75,Shopping
+Clothes from Myntra #18,Shopping
+Discounted deal #84,Shopping
+Bluetooth headset,Electronics
+Phone charger #36,Electronics
+Power bank #17,Electronics
+Smartwatch,Electronics
+Bluetooth headset,Electronics
+USB drive #70,Electronics
+Keyboard,Electronics
+Monitor,Electronics
+Tablet purchase #83,Electronics
+USB drive #63,Electronics
+Tablet purchase,Electronics
+Tablet purchase #68,Electronics
+USB drive #70,Electronics
+Phone charger #94,Electronics
+Phone charger #62,Electronics
+Tablet purchase #53,Electronics
+Bluetooth headset #10,Electronics
+USB drive #35,Electronics
+Router #16,Electronics
+Laptop payment,Electronics
+Laptop payment #69,Electronics
+Tablet purchase,Electronics
+USB drive,Electronics
+Router #31,Electronics
+Tablet purchase,Electronics
+Keyboard,Electronics
+Monitor #3,Electronics
+Power bank,Electronics
+Bluetooth headset #32,Electronics
+Smartwatch,Electronics
+Nail polish,Beauty Products
+Salon visit #3,Beauty Products
+Moisturizer #37,Beauty Products
+Salon visit #13,Beauty Products
+Shampoo and conditioner,Beauty Products
+Moisturizer,Beauty Products
+Moisturizer #6,Beauty Products
+Sunscreen,Beauty Products
+Moisturizer,Beauty Products
+Lipstick,Beauty Products
+Lipstick,Beauty Products
+Nykaa order,Beauty Products
+Makeup kit,Beauty Products
+Shampoo and conditioner #28,Beauty Products
+Hair spa #74,Beauty Products
+Sunscreen #64,Beauty Products
+Makeup kit #20,Beauty Products
+Facewash,Beauty Products
+Lipstick #23,Beauty Products
+Shampoo and conditioner,Beauty Products
+Facewash,Beauty Products
+Makeup kit #17,Beauty Products
+Nykaa order,Beauty Products
+Facewash,Beauty Products
+Makeup kit #84,Beauty Products
+Hair spa #73,Beauty Products
+Nail polish #37,Beauty Products
+Facewash,Beauty Products
+Salon visit,Beauty Products
+Facewash #97,Beauty Products
+Medicines,Health
+Clinic fees #97,Health
+Blood pressure monitor,Health
+Medicines #25,Health
+COVID test #92,Health
+Clinic fees,Health
+Blood pressure monitor #38,Health
+Dietitian visit,Health
+COVID test #79,Health
+Blood pressure monitor,Health
+Vaccination bill,Health
+Vaccination bill,Health
+First aid kit,Health
+Apollo Pharmacy,Health
+Medicines #71,Health
+Apollo Pharmacy,Health
+Doctor consultation,Health
+Apollo Pharmacy,Health
+Doctor consultation,Health
+Dietitian visit #57,Health
+Doctor consultation #74,Health
+Apollo Pharmacy,Health
+Doctor consultation,Health
+Dietitian visit #50,Health
+Apollo Pharmacy #98,Health
+Doctor consultation,Health
+First aid kit,Health
+Medicines #85,Health
+Clinic fees #64,Health
+Medicines,Health
+Protein shake,Fitness
+CrossFit fees,Fitness
+Yoga class #32,Fitness
+CrossFit fees #6,Fitness
+Running shoes,Fitness
+Protein shake #66,Fitness
+Protein shake #62,Fitness
+Fitness tracker #47,Fitness
+CrossFit fees #88,Fitness
+Dumbbells #24,Fitness
+Protein shake,Fitness
+Zumba session,Fitness
+Protein shake #10,Fitness
+Personal trainer,Fitness
+Personal trainer #56,Fitness
+CrossFit fees,Fitness
+Protein shake #7,Fitness
+Dumbbells #48,Fitness
+Treadmill EMI,Fitness
+Dumbbells,Fitness
+Protein shake,Fitness
+Yoga class,Fitness
+Treadmill EMI #79,Fitness
+Running shoes #46,Fitness
+Gym membership,Fitness
+Fitness tracker #69,Fitness
+Yoga class,Fitness
+CrossFit fees,Fitness
+Zumba session,Fitness
+Running shoes #46,Fitness
+Greeting card,Gifts
+Gift voucher,Gifts
+Gift for dad #93,Gifts
+New year gift,Gifts
+Valentine gift,Gifts
+Birthday gift,Gifts
+Festival box #91,Gifts
+Festival box #43,Gifts
+Return gift #88,Gifts
+Return gift,Gifts
+Return gift,Gifts
+Valentine gift #95,Gifts
+New year gift #30,Gifts
+New year gift #53,Gifts
+Gift for dad #36,Gifts
+Return gift,Gifts
+Valentine gift #87,Gifts
+New year gift,Gifts
+Return gift,Gifts
+Gift voucher,Gifts
+Gift voucher #35,Gifts
+Anniversary card #57,Gifts
+Wedding present,Gifts
+Valentine gift #42,Gifts
+Festival box #80,Gifts
+Birthday gift,Gifts
+New year gift #77,Gifts
+Anniversary card #97,Gifts
+Valentine gift #42,Gifts
+Wedding present #42,Gifts
+Learning app subscription #76,Education
+Exam fee,Education
+Exam fee #27,Education
+Reference book,Education
+Textbooks #96,Education
+Exam fee,Education
+Exam fee #12,Education
+College ID renewal #59,Education
+Reference book,Education
+Textbooks,Education
+College ID renewal,Education
+College ID renewal #74,Education
+Textbooks #24,Education
+Tuition fees,Education
+Textbooks,Education
+School uniform #78,Education
+Textbooks #66,Education
+Exam fee,Education
+Tuition fees,Education
+College ID renewal,Education
+College ID renewal,Education
+Textbooks,Education
+Online course,Education
+Tuition fees #28,Education
+Learning app subscription #74,Education
+Course enrollment,Education
+College ID renewal #36,Education
+Exam fee #51,Education
+Textbooks,Education
+Online course #96,Education
+Tips,Miscellaneous
+Tips #12,Miscellaneous
+Lost wallet,Miscellaneous
+Unexpected purchase #99,Miscellaneous
+ATM fee #7,Miscellaneous
+ATM fee,Miscellaneous
+Lost wallet #52,Miscellaneous
+Cash withdrawal fee,Miscellaneous
+Fine payment,Miscellaneous
+Tips #97,Miscellaneous
+ATM fee,Miscellaneous
+Fine payment #38,Miscellaneous
+Tips #8,Miscellaneous
+Fine payment #1,Miscellaneous
+Lost wallet #46,Miscellaneous
+Tips,Miscellaneous
+Cash withdrawal fee #3,Miscellaneous
+Penalty,Miscellaneous
+Tips,Miscellaneous
+Tips,Miscellaneous
+Random charge #6,Miscellaneous
+Unplanned expense,Miscellaneous
+Lost wallet #50,Miscellaneous
+Unplanned expense,Miscellaneous
+Unexpected purchase,Miscellaneous
+ATM fee,Miscellaneous
+Fine payment #48,Miscellaneous
+Lost wallet #19,Miscellaneous
+Unexpected purchase,Miscellaneous
+ATM fee #18,Miscellaneous
