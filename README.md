@@ -7,12 +7,16 @@ It supports expense recording, OCR-based bill scanning, AI-driven expense catego
 
 ## Tech Stack
 
-- **Node.js + Express** – Core backend server (`server.js`)
-- **Python + Flask** – 
-  - OCR Service (`ocr_server.py`)
-  - AI Categorization (`api.py`)
-- **PostgreSQL** – Database (hosted on Render)
-- **Dialogflow** – Optional chatbot interface for natural language expense handling
+
+| Component    | Technology         |
+|--------------|--------------------|
+| Backend      | Node.js + Express  |
+| OCR Service  | Python + Flask + Tesseract |
+| AI Categorization | Python + Flask + Scikit-learn |
+| Database     | PostgreSQL (via Render) |
+| Chatbot      | Dialogflow Messenger |
+| Frontend     | HTML, JS (GitHub Pages) |
+
 
 ---
 
@@ -27,12 +31,18 @@ backend/
 ├── package.json # Node.js dependencies
 ├── render.yaml # Render deployment config (multi-service)
 ```
-
+---
+## Deployment (Render)
+This project uses Render for hosting multiple services:
+1.Node.js
+2.OCR Service (Docker)
+3.ML API (Docker)
+---
 ## Dialogflow Chatbot Integration
 
 This project supports a smart conversational interface using **Dialogflow**, allowing users to interact with the Expense Tracker via natural language.
 
-### 🔗 Supported Intents
+###  Supported Intents
 
 | Intent Name             | Description |
 |-------------------------|-------------|
@@ -53,17 +63,8 @@ This project supports a smart conversational interface using **Dialogflow**, all
 >  Each intent has training phrases defined to capture various ways users might express their intent naturally.
 
 
-### How It Works
-
-1. User sends a message to the Dialogflow chatbot (via UI or embedded widget).
-2. Intent is matched and triggers the corresponding webhook call.
-3. Backend (`server.js`) handles the request, interacts with the database or ML APIs as needed.
-4. Response is sent back to Dialogflow and shown to the user.
-
----
-
 ### Want to Use It?
-
+> You can create your own Dialogflow agent and connect it to this backend or your custom deployment.
 >  Viewers can **create their own Dialogflow agent** and **replicate the intents** listed above using training phrases.
 > This modularity allows you to connect the chatbot to your own backend or the existing hosted one.
 
