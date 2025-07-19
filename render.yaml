@@ -15,6 +15,7 @@ services:
     plan: free
     region: oregon
     dockerfilePath: ./Dockerfile
+    autoDeploy: true
    
 
 

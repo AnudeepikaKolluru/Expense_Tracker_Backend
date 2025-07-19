@@ -1,28 +1,27 @@
-# Use stable Python 3.10 base image
-FROM python:3.10-slim
+# Use lightweight Python image
+FROM python:3.9-slim
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-    tesseract-ocr \
-    libglib2.0-0 \
-    libsm6 \
-    libxext6 \
-    libxrender-dev \
-    gcc \
-    && rm -rf /var/lib/apt/lists/*
+# Set environment
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+# Install Tesseract and dependencies
+RUN apt-get update && \
+    apt-get install -y tesseract-ocr libtesseract-dev libleptonica-dev pkg-config poppler-utils && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # Set working directory
 WORKDIR /app
 
-# Copy all files to container
-COPY . .
+# Copy project files
+COPY . /app
 
-# Upgrade pip and install Python dependencies
-RUN pip install --upgrade pip
+# Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Expose port
-EXPOSE 8000
+EXPOSE 5000
 
-# Run the Flask app
+# Start Flask app
 CMD ["python", "ocr_server.py"]
